@@ -5,7 +5,6 @@ import csv
 #Make path to join and read csv file#
 csvpath = os.path.join("Resources", "budget_data.csv")
 
-print(csvpath)
 
 #Initialize variables#
 month_count = 0
