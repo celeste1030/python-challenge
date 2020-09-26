@@ -7,7 +7,7 @@ csvpath = os.path.join("Resources", "budget_data.csv")
 
 print(csvpath)
 
-#Initialize the variables#
+#Initialize variables#
 month_count = 0
 net_total = 0
 avg_changes = 0
