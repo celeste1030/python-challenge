@@ -1,18 +1,17 @@
-#import modules#
+#Import modules#
 import os
 import csv
 
-#make path to join and read csv file#
+#Make path to join and read csv file#
 csvpath = os.path.join("Resources", "budget_data.csv")
 
 print(csvpath)
 
-#initialize variable#
+#Initialize variables#
 month_count = 0
 net_total = 0
 avg_changes = 0
-great_inc = 0
-great_dec = 0
+
 
 #Lists to hold variables#
 total_changes = []
@@ -20,17 +19,18 @@ months = []
 
 
 
-#open file with csv reader#
+#Open file with csv reader#
 with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     print(csvreader)
-#next column#
-    
-    csv_header = next(csvreader)
-#for loop through rows and pull info#
 
+#Name header#
+    csv_header = next(csvreader)
+
+#For loop through rows and pull info#
     for row in csvreader:
-        # Total number of months in dataset#
+        
+        #Total number of months in dataset#
         month_count = month_count + 1
 
         #Total amount of Profits/Loss#
@@ -53,10 +53,10 @@ with open(csvpath, newline='') as csvfile:
             
             
             
-    #calculate average change and round#
+    #Calculate average change and round#
     avg_change = round(sum(total_changes)/(month_count -1), 2)
 
-    #calculate greatest increase and greatest decrease#
+    #Calculate greatest increase and greatest decrease#
     greatest_increase = max(total_changes)
     greatest_decrease = min(total_changes)
 
@@ -92,6 +92,5 @@ with open(budget_results, "w") as outfile:
     outfile.write(f"Greatest Increase in Profits:  {best_month} (${greatest_increase})\n")
     outfile.write(f"Greatest Decrease in Losses:  {worst_month} (${greatest_decrease})\n")
 
-
-
+#You're all set!#
 
