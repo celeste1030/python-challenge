@@ -28,9 +28,7 @@ with open(csvpath, "r") as csvfile:
     #create dictionary of candidates and number of votes#
     candidate_votes = collections.Counter(candidates)
 
-    print(candidate_votes)
-
-    print(total_votes)
+    
 
     for k, v in candidate_votes.items():
         percentage = str(round(v/total_votes * 100, 2)) + "%"
@@ -44,7 +42,7 @@ with open(csvpath, "r") as csvfile:
     #find winner of election#
     maxvalue = max(candidate_votes.values())
     winner = [k for k, v in candidate_votes.items()if v == maxvalue]
-    print(winner)
+    
     #print out info in terminal#
                     
     print("------------------------------")
@@ -70,6 +68,8 @@ with open(election_results, "w") as outfile:
     outfile.write("\n------------------------------\n")
     outfile.write(f'Winner:  {winner}\n')
     outfile.write("------------------------------\n")
+
+#You're all set#
 
     
 
