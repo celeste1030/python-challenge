@@ -70,14 +70,3 @@ with open(election_results, "w") as outfile:
     outfile.write("------------------------------\n")
 
 #You're all set#
-
-    
-
-
-        
-
-           
-
-    
-            
-          
