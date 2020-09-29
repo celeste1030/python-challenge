@@ -11,6 +11,7 @@ csvpath = os.path.join("Resources", "test_data.csv")
 candidates = []
 candidate_votes = []
 total_votes = 0
+candidate_stuff = []
 
 #Read csv file with csv reader#
 
@@ -31,27 +32,35 @@ with open(csvpath, "r") as csvfile:
 
     print(total_votes)
 
-for k, v in candidate_votes.items():
-    percentage = str(round(v/total_votes * 100, 2)) + "%"
+    for k, v in candidate_votes.items():
+        percentage = str(round(v/total_votes * 100, 2)) + "%"
 
-    candidate_info = [k, percentage, v]
+        candidate_info = [k, percentage, v]
 
-    print(candidate_info)
-    
-#find winner of election#
-maxvalue = max(candidate_votes.values())
-winner = [k for k, v in candidate_votes.items()if v == maxvalue]
-print(winner)
-                
-print("------------------------------")
-print("Election Results")
-print("------------------------------")
-print(f"Total Votes:  {total_votes}")
-print("------------------------------")
-print(f'{candidate_info}')
-print("------------------------------")
-print(f'Winner:  {winner}')
-print("------------------------------")
+        candidate_stuff.append(candidate_info)
+
+       
+        
+    #find winner of election#
+    maxvalue = max(candidate_votes.values())
+    winner = [k for k, v in candidate_votes.items()if v == maxvalue]
+    print(winner)
+    #print out info in terminal#
+                    
+    print("------------------------------")
+    print("Election Results")
+    print("------------------------------")
+    print(f"Total Votes:  {total_votes}")
+    print("------------------------------")
+    print(f'{candidate_stuff}')
+    print("------------------------------")
+    print(f'Winner:  {winner}')
+    print("------------------------------")
+
+    #write output file with results and put in Analysis folder#
+
+
+
         
 
            
