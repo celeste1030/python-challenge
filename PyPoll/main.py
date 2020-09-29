@@ -4,7 +4,7 @@ import collections
 
 #Make a path to the csv holding election data#
 
-csvpath = os.path.join("Resources", "test_data.csv")
+csvpath = os.path.join("Resources", "election_data.csv")
 
 #Initialize variables#
 
@@ -52,7 +52,7 @@ with open(csvpath, "r") as csvfile:
     print("------------------------------")
     print(f"Total Votes:  {total_votes}")
     print("------------------------------")
-    print(f'{candidate_stuff}')
+    print('\n'.join(map(str, candidate_stuff)))
     print("------------------------------")
     print(f'Winner:  {winner}')
     print("------------------------------")
@@ -66,8 +66,8 @@ with open(election_results, "w") as outfile:
     outfile.write("------------------------------\n")
     outfile.write(f"Total Votes:  {total_votes}\n")
     outfile.write("------------------------------\n")
-    outfile.write(f'{candidate_stuff}\n')
-    outfile.write("------------------------------\n")
+    outfile.write('\n'.join(map(str, candidate_stuff)))
+    outfile.write("\n------------------------------\n")
     outfile.write(f'Winner:  {winner}\n')
     outfile.write("------------------------------\n")
 
