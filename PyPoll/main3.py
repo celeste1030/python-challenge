@@ -59,6 +59,19 @@ with open(csvpath, "r") as csvfile:
 
     #write output file with results and put in Analysis folder#
 
+election_results = os.path.join("Analysis", "election_results.txt")
+with open(election_results, "w") as outfile:
+    outfile.write("------------------------------\n")
+    outfile.write("Election Results\n")
+    outfile.write("------------------------------\n")
+    outfile.write(f"Total Votes:  {total_votes}\n")
+    outfile.write("------------------------------\n")
+    outfile.write(f'{candidate_stuff}\n')
+    outfile.write("------------------------------\n")
+    outfile.write(f'Winner:  {winner}\n')
+    outfile.write("------------------------------\n")
+
+    
 
 
         
